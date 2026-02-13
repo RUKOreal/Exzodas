@@ -1,17 +1,162 @@
-Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) My name is prapawin
-=================================================================================================================================
+# TOEIC Vocabulary Study App
 
-Penetration Tester | Security Researcher | CTF Player
------------------------------------------------------
+A React Native (Expo) mobile app for studying TOEIC vocabulary, consuming a Node.js Express API backend.
 
-I’ve been passionate about cybersecurity for over 3 years. My journey started with TryHackMe and CTF challenges, and I quickly fell in love with finding vulnerabilities and securing systems. I hold the eJPT certification and am currently preparing for OSCP. I enjoy doing bug bounty hunting in my free time and love sharing knowledge with the security community.
+## 📁 Project Structure
 
-* 🌍  I'm based in Bangkok, Thailand
-* ✉️  You can contact me at [prapawin1263@gmail.com](mailto:prapawin1263@gmail.com)
-* 🧠  I'm currently learning Write-ups for TryHackMe / Hack The Box machines
-* 👥  I'm looking to collaborate on Bug bounty hunting & responsible disclosure Open-source security tools (e.g., Burp extensions, recon tools) CTF team challenges (join forces in competitions)
-* 💬  Ask me about Actively looking for a junior penetration tester position
+```
+moblie_appV2/
+├── App.js                          # Main app entry point
+├── app.json                        # Expo configuration
+├── babel.config.js                 # Babel configuration
+├── package.json                    # Dependencies
+├── src/
+│   ├── services/
+│   │   └── api.js                  # API service layer with JWT
+│   ├── hooks/
+│   │   └── useFlashcards.js        # Custom hook for flashcards
+│   ├── context/
+│   │   └── StudyContext.js         # Global state management
+│   └── screens/
+│       └── StudySessionScreen.js   # Main study UI
+└── assets/                         # App icons and images
+```
 
-<p align="left">
-<a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" title="Python" width="36" height="36" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" alt="JavaScript" title="JavaScript" width="36" height="36" /></a><a href="https://www.ruby-lang.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/ruby-colored.svg" alt="Ruby" title="Ruby" width="36" height="36" /></a><a href="https://docs.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/c-colored.svg" alt="C" title="C" width="36" height="36" /></a><a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" alt="TypeScript" title="TypeScript" width="36" height="36" /></a><a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/gnubash-colored.svg" alt="GNU Bash" title="GNU Bash" width="36" height="36" /></a><a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode-colored.svg" alt="VS Code" title="VS Code" width="36" height="36" /></a><a href="https://neovim.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/neovim-colored.svg" alt="Neovim" title="Neovim" width="36" height="36" /></a><a href="https://www.gnu.org/software/emacs/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/emacs-colored.svg" alt="Emacs" title="Emacs" width="36" height="36" /></a><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" alt="HTML5" title="HTML5" width="36" height="36" /></a><a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" alt="React" title="React" width="36" height="36" /></a><a href="https://nextjs.org/docs" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored-dark.svg" alt="NextJs" title="NextJs" width="36" height="36" /></a><a href="https://angular.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg" alt="Angular" title="Angular" width="36" height="36" /></a><a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" alt="CSS3" title="CSS3" width="36" height="36" /></a><a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg" alt="TailwindCSS" title="TailwindCSS" width="36" height="36" /></a><a href="https://getbootstrap.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg" alt="Bootstrap" title="Bootstrap" width="36" height="36" /></a><a href="https://webpack.js.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/webpack-colored.svg" alt="Webpack" title="Webpack" width="36" height="36" /></a><a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" alt="NodeJS" title="NodeJS" width="36" height="36" /></a><a href="https://www.mysql.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" alt="MySQL" title="MySQL" width="36" height="36" /></a><a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" alt="MongoDB" title="MongoDB" width="36" height="36" /></a><a href="https://graphql.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/graphql-colored.svg" alt="GraphQL" title="GraphQL" width="36" height="36" /></a><a href="https://resend.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/resend-colored-dark.svg" alt="Resend" title="Resend" width="36" height="36" /></a><a href="https://docs.nestjs.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nestjs-colored.svg" alt="NestJS" title="NestJS" width="36" height="36" /></a><a href="https://ethers.io" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/ethers-colored.svg" alt="Ethers" title="Ethers" width="36" height="36" /></a><a href="https://web3js.readthedocs.io/en/v1.7.1/#" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/web3js-colored.svg" alt="Web3Js" title="Web3Js" width="36" height="36" /></a><a href="https://filebase.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/filebase-colored.svg" alt="Filebase" title="Filebase" width="36" height="36" /></a><a href="https://ethereum.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/ethereum-colored.svg" alt="Ethereum" title="Ethereum" width="36" height="36" /></a><a href="https://polygon.technology/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/polygon-colored.svg" alt="Polygon" title="Polygon" width="36" height="36" /></a><a href="https://cloud.google.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/googlecloud-colored.svg" alt="Google Cloud" title="Google Cloud" width="36" height="36" /></a><a href="https://portal.azure.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/azure-colored.svg" alt="Microsoft Azure" title="Microsoft Azure" width="36" height="36" /></a><a href="https://wordpress.com" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/wordpress-colored.svg" alt="Wordpress" title="Wordpress" width="36" height="36" /></a><a href="https://webflow.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/webflow-colored.svg" alt="Webflow" title="Webflow" width="36" height="36" /></a><a href="https://www.raspberrypi.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/raspberrypi-colored.svg" alt="Raspberry Pi" title="Raspberry Pi" width="36" height="36" /></a><a href="https://www.yoctoproject.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/yocto-colored.svg" alt="Yocto Project" title="Yocto Project" width="36" height="36" /></a><a href="https://store.arduino.cc/?gclid=Cj0KCQjw2eilBhCCARIsAG0Pf8uueBifykWcsSS4LPESeGQfxGVKJYnzV7bz471XfknQJy_1VINVWM8aAkLtEALw_wcB" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/arduino-colored.svg" alt="Arduino" title="Arduino" width="36" height="36" /></a><a href="https://www.linux.org" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/linux-colored.svg" alt="Linux" title="Linux" width="36" height="36" /></a><a href="https://ubuntu.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/ubuntu-colored.svg" alt="Ubuntu" title="Ubuntu" width="36" height="36" /></a><a href="https://apple.com" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/macos-colored-dark.svg" alt="MacOS" title="MacOS" width="36" height="36" /></a><a href="https://dotnet.microsoft.com/en-us/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/dot-net-colored.svg" alt=".NET" title=".NET" width="36" height="36" /></a><a href="https://laravel.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/laravel-colored.svg" alt="Laravel" title="Laravel" width="36" height="36" /></a><a href="https://huggingface.co/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/huggingface-colored-dark.svg" alt="Hugging Face" title="Hugging Face" width="36" height="36" /></a>
-</p>
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- Expo CLI (`npm install -g expo-cli`)
+- Expo Go app on your device
+
+### Installation
+
+```bash
+# Navigate to project directory
+cd moblie_appV2
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+### Running on Device/Emulator
+
+```bash
+# Start with Expo
+npx expo start
+
+# Run on Android
+npm run android
+
+# Run on iOS (macOS only)
+npm run ios
+```
+
+## ⚙️ Configuration
+
+### API Base URL
+
+Update the API base URL in `src/services/api.js`:
+
+```javascript
+const BASE_URL = __DEV__
+  ? "http://YOUR_LOCAL_IP:3000" // Use actual IP, not localhost
+  : "https://your-production-api.com";
+```
+
+> **Note**: On mobile devices, `localhost` won't work. Use your machine's IP address (e.g., `192.168.1.100:3000`).
+
+## 📦 Features
+
+### 1. API Service Layer (`src/services/api.js`)
+
+- Generic fetch wrapper with timeout
+- JWT token management (AsyncStorage)
+- Automatic token refresh on 401
+- Error handling with custom ApiError class
+
+### 2. useFlashcards Hook (`src/hooks/useFlashcards.js`)
+
+- Fetches words from `GET /api/words/feed`
+- Submits results to `POST /api/study/log`
+- **Optimistic updates** with automatic rollback
+- Card navigation (next/prev/goTo)
+- Progress tracking
+
+### 3. Global State (`src/context/StudyContext.js`)
+
+- React Context + useReducer pattern
+- Centralized state for multi-screen apps
+- Session statistics tracking
+- Pending updates tracking for sync status
+
+### 4. Study Session UI (`src/screens/StudySessionScreen.js`)
+
+- Flip card animation
+- Quality rating buttons (Again, Hard, Good, Easy)
+- Progress bar
+- Loading/Error/Empty states
+- Pull-to-refresh
+
+## 🔄 Optimistic Updates Flow
+
+```
+┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+│   User taps  │────▶│   Optimistic │────▶│   API Call   │
+│    rating    │     │    Update    │     │   Started    │
+└──────────────┘     └──────────────┘     └──────────────┘
+                                                  │
+        ┌─────────────────────────────────────────┤
+        │                                         │
+        ▼                                         ▼
+┌──────────────┐                         ┌──────────────┐
+│   Success:   │                         │   Error:     │
+│  Keep state  │                         │   Rollback   │
+└──────────────┘                         └──────────────┘
+```
+
+## 📱 Backend API Requirements
+
+Ensure your Node.js backend provides:
+
+```
+GET  /api/words/feed?limit=20
+Response: { data: [{ id, word, definition, ... }] }
+
+POST /api/study/log
+Body: { wordId, quality, timestamp }
+Response: { success: true, nextReview: "2024-01-15T..." }
+
+POST /api/auth/refresh
+Body: { refreshToken }
+Response: { accessToken, refreshToken }
+```
+
+## 🎨 Customization
+
+### Theme Colors
+
+Edit the color scheme in `StudySessionScreen.js`:
+
+```javascript
+backgroundColor: '#1A1A2E',  // Dark background
+cardColor: '#2D2D44',        // Card background
+accentColor: '#4DABF7',      // Primary accent
+```
+
+### Quality Ratings
+
+Modify the SM-2 algorithm intervals in `useFlashcards.js`:
+
+```javascript
+const intervals = [0, 1, 3, 7, 14, 30]; // Days for quality 0-5
+```
+
+## 📄 License
+
+MIT
